@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 22-Oct-2018 16:30:40
+% Last Modified by GUIDE v2.5 22-Oct-2018 16:44:32
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -122,4 +122,3 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 alfa=uigetfile({'*.m'},'Abrir Documento');
-
