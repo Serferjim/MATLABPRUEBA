@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 17-Oct-2018 14:58:37
+% Last Modified by GUIDE v2.5 22-Oct-2018 16:30:40
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -81,7 +81,7 @@ function edit1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of edit1 as text
 %        str2double(get(hObject,'String')) returns contents of edit1 as a double
-
+hObject=uigetfile({'*.txt'},'Abrir Documento');
 
 % --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
@@ -114,3 +114,11 @@ HM2(:,:,2)=M4;
 HM3(:,:,:,1)=HM1;
 HM3(:,:,:,2)=HM2;
 vargout = pruebaFunction(HM3, HM3)
+
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+[FileName Path]=uigetfile({'*.txt'},'Abrir Documento');
