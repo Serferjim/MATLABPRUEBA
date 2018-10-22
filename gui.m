@@ -101,3 +101,16 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+M1 = [1 2 3; 4 5 6];
+M2 = [7 8 9; 10 11 12];
+M3 = [13 14 15; 16 17 18];
+M4 = [19 20 21; 22 23 25];
+
+HM1(:,:,1)=M1;
+HM1(:,:,2)=M2;
+HM2(:,:,1)=M3;
+HM2(:,:,2)=M4;
+
+HM3(:,:,:,1)=HM1;
+HM3(:,:,:,2)=HM2;
+vargout = pruebaFunction(HM3, HM3)
