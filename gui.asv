@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 24-Oct-2018 12:12:31
+% Last Modified by GUIDE v2.5 22-Oct-2018 16:44:32
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -81,9 +81,9 @@ function edit1_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of edit1 as text
 %        str2double(get(hObject,'String')) returns contents of edit1 as a double
+hObject=uigetfile({'*.txt'},'Abrir Documento');
 
-
-% --- Setea los parametros de la interfaz
+% --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -96,7 +96,7 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Esto se ejecuta cuando se pulsa el botón OK
+% --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -121,7 +121,9 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-[FileName, Path]=uigetfile({'*.jpg'},'Abrir Documento'); % Esto abre el buscador de archivos, muestra archivos con la extensión que le indicamos
-set(handles.text5,'String', Path)%Esto sirve para setear en el text5, texto no modificable por el usuario, la ruta al archivo seleccionado
-a = imread(strcat(Path, FileName));%Esto crea una variable para la imagen seleccionada
-imshow(a)%Esto muestra en los ejes de la interfaz que hemos puesto
+[FileName Path]=uigetfile({'*.jpg'},'Abrir Documento'); % Esto abre el buscador de archivos, muestra archivos con la extensión que le indicamos
+set(handles.text5,'String', Path)%Esto sirve para setear en el text5, texto no modificable por el usuario
+a = imread(strcat(Path, FileName));
+imshow(a)
+
+
